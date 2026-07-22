@@ -22,7 +22,7 @@
     @apply bg-bud text-ink;
   }
   :focus-visible {
-    outline: 2px solid #9be15d;
+    outline: 2px solid #2e7a3c;
     outline-offset: 2px;
   }
 }
@@ -111,7 +111,7 @@
     @apply rounded-2xl border border-moss bg-panel;
   }
   .card-lift {
-    @apply transition duration-300 hover:-translate-y-1 hover:border-bud/60 hover:shadow-[0_12px_40px_-12px_rgba(155,225,93,0.25)] active:translate-y-0 active:scale-[0.99];
+    @apply transition duration-300 hover:-translate-y-1 hover:border-bud/50 hover:shadow-[0_16px_40px_-16px_rgba(32,38,27,0.18)] active:translate-y-0 active:scale-[0.99];
   }
   .field {
     @apply w-full rounded-xl border border-moss bg-panel px-4 py-3 text-bone placeholder:text-smoke/60 focus:border-bud focus:outline-none;

@@ -41,7 +41,7 @@ export default function ShippingPolicyPage() {
           time frame, delivery times are estimates and not guarantees. Factors such as
           weather, carrier delays, and holidays can affect delivery.
         </p>
-        <div className="card-soft border-red-500/30 p-6">
+        <div className="card-soft border-red-200 p-6">
           <h2 className="font-display text-base font-bold text-bone">THCa Shipping Restrictions</h2>
           <p className="mt-2">
             {site.compliance.shippingNote} Restricted states: {site.restrictedStates.join(', ')}.

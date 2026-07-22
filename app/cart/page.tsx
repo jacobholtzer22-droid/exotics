@@ -70,7 +70,7 @@ export default function CartPage() {
                     <button
                       type="button"
                       onClick={() => removeItem(line.variantId)}
-                      className="text-smoke transition hover:text-red-400"
+                      className="text-smoke transition hover:text-red-600"
                       aria-label={`Remove ${line.product.title}`}
                     >
                       <Trash2 className="h-4 w-4" />

@@ -232,7 +232,7 @@ export default function CheckoutPage() {
               </div>
 
               {stateRestricted && (
-                <p className="mt-4 flex items-start gap-2 rounded-xl border border-red-500/40 bg-red-500/10 p-4 text-sm leading-relaxed text-red-300">
+                <p className="mt-4 flex items-start gap-2 rounded-xl border border-red-300 bg-red-50 p-4 text-sm leading-relaxed text-red-700">
                   <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>
                     We can&apos;t ship THCa products to {form.state}.{' '}
@@ -257,7 +257,7 @@ export default function CheckoutPage() {
                   required
                   checked={form.ageConfirm}
                   onChange={(e) => set('ageConfirm', e.target.checked)}
-                  className="mt-1 h-4 w-4 accent-[#9BE15D]"
+                  className="mt-1 h-4 w-4 accent-[#2E7A3C]"
                 />
                 <span>I confirm I am 21 years of age or older. *</span>
               </label>
@@ -266,7 +266,7 @@ export default function CheckoutPage() {
                   type="checkbox"
                   checked={form.smsConsent}
                   onChange={(e) => set('smsConsent', e.target.checked)}
-                  className="mt-1 h-4 w-4 accent-[#9BE15D]"
+                  className="mt-1 h-4 w-4 accent-[#2E7A3C]"
                 />
                 <span>
                   It&apos;s okay to text me about my order (order updates and payment

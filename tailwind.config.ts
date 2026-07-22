@@ -8,27 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Light "botanical paper" theme. Token NAMES are legacy (from the original
+      // dark build) — only the VALUES changed, so components need no churn:
+      // ink = page background (warm paper), bone = primary text (deep green-black),
+      // panel = cards (white), moss = borders, bud = leaf-green accent/CTA.
       colors: {
         ink: {
-          DEFAULT: '#0B0D09',
-          soft: '#101308',
+          DEFAULT: '#F8F6EF',
+          soft: '#F0EDE2',
         },
         panel: {
-          DEFAULT: '#13160E',
-          raised: '#181C11',
+          DEFAULT: '#FFFFFF',
+          raised: '#FBFAF4',
         },
-        moss: '#262D1A',
+        moss: '#E4E0D1',
         bud: {
-          DEFAULT: '#9BE15D',
-          deep: '#65A82E',
-          glow: '#C4F58C',
+          DEFAULT: '#2E7A3C',
+          deep: '#21622D',
+          glow: '#379149',
         },
         haze: {
-          DEFAULT: '#B98CFF',
-          deep: '#8B5CF6',
+          DEFAULT: '#7448B8',
+          deep: '#5B3694',
         },
-        bone: '#F4F2E9',
-        smoke: '#A2A896',
+        bone: '#20261B',
+        smoke: '#5C6355',
       },
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
