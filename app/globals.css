@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-bone font-body antialiased;
+    overscroll-behavior-y: none;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    touch-action: manipulation;
+  }
+  ::selection {
+    @apply bg-bud text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #9be15d;
+    outline-offset: 2px;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.08);
+  }
+}
+
+@keyframes drift-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-20px, 14px, 0) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-drift {
+  animation: drift 14s ease-in-out infinite;
+}
+.animate-drift-slow {
+  animation: drift-slow 18s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-late {
+  animation: float 7s ease-in-out 1.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-drift,
+  .animate-drift-slow,
+  .animate-float,
+  .animate-float-late {
+    animation: none;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8;
+  }
+  .h-display {
+    @apply font-display font-bold tracking-tight;
+  }
+  .eyebrow {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.22em] text-bud;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-bud px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-ink transition hover:bg-bud-glow active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-moss bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-bone transition hover:border-bud hover:text-bud active:scale-[0.98];
+  }
+  .card-soft {
+    @apply rounded-2xl border border-moss bg-panel;
+  }
+  .card-lift {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-bud/60 hover:shadow-[0_12px_40px_-12px_rgba(155,225,93,0.25)] active:translate-y-0 active:scale-[0.99];
+  }
+  .field {
+    @apply w-full rounded-xl border border-moss bg-panel px-4 py-3 text-bone placeholder:text-smoke/60 focus:border-bud focus:outline-none;
+  }
+  .stat-pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-moss bg-ink/60 px-2.5 py-1 text-[11px] font-semibold tracking-wide;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
