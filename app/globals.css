@@ -70,6 +70,15 @@
   animation: float 7s ease-in-out 1.2s infinite;
 }
 
+/* Safety net: if a JS-driven reveal never completes (frozen rAF, throttled tab,
+   ancient browser), useRevealGuard applies this class to force the element visible.
+   Static !important declaration — needs no animation clock, beats framer's inline
+   opacity instantly. Opacity only: transforms are left alone so styled offsets
+   survive in healthy browsers where the guard is a no-op. */
+.reveal-guard-now {
+  opacity: 1 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

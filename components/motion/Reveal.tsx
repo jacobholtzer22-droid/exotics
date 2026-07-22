@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { useRevealGuard } from './guard'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none'
 
@@ -27,14 +28,16 @@ export default function Reveal({
   className?: string
 }) {
   const reduce = useReducedMotion()
+  const { guardClass, onViewportEnter } = useRevealGuard(8000)
   const { x, y } = OFFSET[direction]
 
   return (
     <motion.div
-      className={className}
+      className={[guardClass, className].filter(Boolean).join(' ') || undefined}
       initial={reduce ? false : { opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
+      onViewportEnter={onViewportEnter}
       transition={{ duration, delay, ease: [0.21, 0.65, 0.32, 0.98] }}
     >
       {children}

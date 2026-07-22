@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Search } from 'lucide-react'
+import { useRevealGuard } from '@/components/motion/guard'
 import ProductCard from '@/components/ProductCard'
 import {
   CATEGORY_LABELS,
@@ -27,6 +28,7 @@ export default function ShopClient({ initialCategory }: { initialCategory: Categ
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<Sort>('featured')
   const reduce = useReducedMotion()
+  const { guardClass } = useRevealGuard(1500)
 
   // Keep the tab in sync when the header links change ?cat= while already on /shop.
   useEffect(() => {
@@ -126,7 +128,7 @@ export default function ShopClient({ initialCategory }: { initialCategory: Categ
           initial={reduce ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+          className={`${guardClass} mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4`}
         >
           {filtered.map((p, i) => (
             <ProductCard key={p.handle} product={p} priority={i < 4} />
