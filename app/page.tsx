@@ -20,7 +20,7 @@ const CATEGORY_TILES = [
     label: 'Drinks',
     href: '/shop?cat=drinks',
     blurb: 'Swig fast-acting shots in 6 flavors',
-    image: '/images/products/swig-100mg/0.webp',
+    image: '/images/products/swig-emotional/0.webp',
   },
   {
     label: 'Edibles',
@@ -32,7 +32,7 @@ const CATEGORY_TILES = [
     label: 'Apparel',
     href: '/shop?cat=apparel',
     blurb: 'Streetwear from independent designers',
-    image: '/images/products/exotics-t-shirts/0.webp',
+    image: '/images/products/core-tees/0.webp',
   },
 ]
 
@@ -55,7 +55,7 @@ const TRUST = [
 ]
 
 export default function HomePage() {
-  const swig = byHandle('swig-100mg')
+  const swig = byHandle('swig-emotional')
 
   return (
     <>
@@ -240,10 +240,10 @@ export default function HomePage() {
               fast-acting shots in six flavors, available in 100mg and 300mg strengths.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/shop/swig-100mg" className="btn-primary">
+              <Link href="/shop/swig-emotional" className="btn-primary">
                 Shop Swig 100mg
               </Link>
-              <Link href="/shop/swig-300mg" className="btn-outline">
+              <Link href="/shop/swig-euphoric" className="btn-outline">
                 Shop Swig 300mg
               </Link>
             </div>

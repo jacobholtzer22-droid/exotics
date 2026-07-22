@@ -60,10 +60,10 @@ export function findVariant(product: Product, variantId: number): Variant | unde
 
 const FEATURED_FLOWER = ['gorilla-glue', 'jet-fuel', 'sugar-plum', 'green-crack']
 const FEATURED_GEAR = [
-  'exotics-t-shirts',
+  'core-tees',
   'shoulder-backpack',
-  'limited-edition-monkey-berries-tee-shirt',
-  'snapbacks',
+  'monkey-berries-tee-shirt',
+  'rainbow-snapbacks',
 ]
 
 export const featuredFlower = FEATURED_FLOWER.map(byHandle).filter(Boolean) as Product[]

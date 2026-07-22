@@ -33,8 +33,8 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 gap-4">
           {[
             '/images/products/gorilla-glue/0.webp',
-            '/images/products/exotics-t-shirts/0.webp',
-            '/images/products/swig-100mg/0.webp',
+            '/images/products/core-tees/0.webp',
+            '/images/products/swig-emotional/0.webp',
             '/images/products/rainbow-runtz/0.webp',
           ].map((src, i) => (
             <div
